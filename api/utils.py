@@ -1,5 +1,4 @@
 import requests
-from bs4 import BeautifulSoup
 
 def get_id(username):
 
@@ -41,10 +40,10 @@ def get_id(username):
 
 def get_id_with_proxy(username):
   
-        usernamee = 'sprf1lyzgh'
+        user_name = 'sprf1lyzgh'
         password = 'Y0xnnKy6ete47AxmnG'
 
-        proxy = f'http://{usernamee}:{password}@gate.smartproxy.com:7000'
+        proxy = f'http://{user_name}:{password}@gate.smartproxy.com:7000'
 
         url = f'https://www.facebook.com/{username}'
         url = url
