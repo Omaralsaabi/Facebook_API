@@ -81,3 +81,8 @@ def get_id_with_proxy(username):
       
 
         return {'fid':fid, 'username':url}
+
+
+def id_existed(username):
+    id = username.split('id=')[1]
+    return id
