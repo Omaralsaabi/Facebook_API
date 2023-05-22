@@ -13,7 +13,6 @@ def ids(requests, pk):
     try:
         
         facebook = FacebookDB.objects.filter(username = pk).first()
-        print (facebook)
         return Response({'username':pk, 'fid':facebook.fid})
     except:
             facebook = get_id(pk)
