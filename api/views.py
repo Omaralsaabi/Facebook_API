@@ -24,8 +24,11 @@ def ids(requests, pk):
             if fid == 'Not Found':
                 facebook = get_id_with_proxy(pk)
                 fid = facebook['fid']
-
-                facebook = FacebookDB.objects.create(username = pk, fid = fid)
+                
+                facebook = FacebookDB.objects.get(username = pk)
+                facebook.fid = fid
+                facebook.save()
+                return Response({'username':pk, 'fid':fid})
                 
             else:
                 return Response({'username':pk, 'fid':fid})

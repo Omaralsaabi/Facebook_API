@@ -39,14 +39,16 @@ def get_id(username):
         return {'fid':fid, 'username':url}
 
 
-def get_id_with_proxy(url):
+def get_id_with_proxy(username):
   
-        username = 'sprf1lyzgh'
+        usernamee = 'sprf1lyzgh'
         password = 'Y0xnnKy6ete47AxmnG'
 
-        proxy = f'http://{username}:{password}@gate.smartproxy.com:7000'
+        proxy = f'http://{usernamee}:{password}@gate.smartproxy.com:7000'
 
+        url = f'https://www.facebook.com/{username}'
         url = url
+
 
         payload = {}
         headers = {
@@ -66,8 +68,6 @@ def get_id_with_proxy(url):
         'upgrade-insecure-requests': '1',
         'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36'
         }    
-        response = requests.request("GET", url, headers=headers, data=payload).text
-        fid =''
 
         print("Not Found Without Proxy")
         response = requests.request("GET", url, headers=headers, data=payload, proxies={'http': proxy, 'https': proxy}).text
